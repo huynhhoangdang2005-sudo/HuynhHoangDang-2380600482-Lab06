@@ -2,9 +2,9 @@ import socket
 
 def handle_request(client_socket, request_data):
     if"GET /admin" in request_data:
-        response = "HTTP/1.1 200\OK\r\nContent-Type: text/html\r\n\r\nWelcome to the admin page!"
+        response = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\nWelcome to the admin page!"
     else:
-        response ="HTTP/1.1 200\OK\r\nContent-Type: text/html\r\n\r\nHello, this is a simple web server!"
+        response ="HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\nHello, this is a simple web server!"
     client_socket.sendall(response.encode('utf-8'))
     client_socket.close()
     
